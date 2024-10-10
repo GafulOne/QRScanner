@@ -1,5 +1,6 @@
 package com.example.qrscanner
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
@@ -14,5 +15,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val button = findViewById<Button>(R.id.code_button)
+        button.setOnClickListener {
+            val intent = Intent(this, code_window::class.java)
+            startActivity(intent)
+        }
     }
 }
